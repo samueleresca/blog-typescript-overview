@@ -1,12 +1,14 @@
-var Greeter = (function () {
-    function Greeter(greeting) {
-        this.greeting = greeting;
+var Student = (function () {
+    function Student(firstname, middleinitial, lastname) {
+        this.firstname = firstname;
+        this.middleinitial = middleinitial;
+        this.lastname = lastname;
+        this.fullname = firstname + " " + middleinitial + " " + lastname;
     }
-    Greeter.prototype.greet = function () {
-        return "<h1>" + this.greeting + "</h1>";
-    };
-    return Greeter;
+    return Student;
 })();
-;
-var greeter = new Greeter("Hello, world!");
-document.body.innerHTML = greeter.greet();
+function greeter(person) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+var user = new Student("Samuele", "", "Resca");
+document.body.innerHTML = greeter(user);

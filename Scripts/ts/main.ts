@@ -1,12 +1,20 @@
-class Greeter {
-    constructor(public greeting: string) { }
-    greet() {
-        return "<h1>" + this.greeting + "</h1>";
+class Student {
+    fullname : string;
+    constructor(public firstname, public middleinitial, public lastname) {
+        this.fullname = firstname + " " + middleinitial + " " + lastname;
     }
-};
+}
 
-var greeter = new Greeter("Hello, world!");
-    
-    
-document.body.innerHTML = greeter.greet();
+interface Person {
+    firstname: string;
+    lastname: string;
+}
 
+function greeter(person : Person) {
+    return "Hello, " + person.firstname + " " + person.lastname;
+}
+
+
+var user = new Student("Samuele", "", "Resca");
+
+document.body.innerHTML = greeter(user);
