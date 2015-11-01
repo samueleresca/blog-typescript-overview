@@ -5,8 +5,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
     //________________
-    
-    
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         connect: {
