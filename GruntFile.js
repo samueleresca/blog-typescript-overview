@@ -1,9 +1,12 @@
 module.exports = function (grunt) {
+    //REQUIRED MODULES
     grunt.loadNpmTasks('grunt-typescript');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
- 
+    //________________
+    
+    
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         connect: {
@@ -34,7 +37,5 @@ module.exports = function (grunt) {
             }
         }
     });
- 
     grunt.registerTask('default', ['connect', 'open', 'watch']);
- 
 }
