@@ -16,8 +16,8 @@ module.exports = function (grunt) {
         },
         typescript: {
             base: {
-                src: ['Scripts/**/*.ts'],
-                dest: 'Scripts/compiled/main.js',
+                src: ['Scripts/**/*.ts'], //all *.ts files 
+                dest: 'Scripts/compiled/main.js', //compiled inside main.js
                 options: {
                     module: 'amd',
                     target: 'es5'
@@ -25,8 +25,8 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            files: '**/*.ts',
-            tasks: ['typescript']
+            files: '**/*.ts', //watch all *.ts files    
+            tasks: ['typescript'] // run the typescript task
         },
         open: {
             dev: {
