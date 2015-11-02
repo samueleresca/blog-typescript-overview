@@ -1,18 +1,47 @@
-class Student {
-    fullname : string;
-    constructor(public firstname, public middleinitial, public lastname) {
-        this.fullname = firstname + " " + middleinitial + " " + lastname;
+class Telefilm {
+    title : string;
+    description: string;
+    characters: Character[];
+    
+    constructor( title: string,  description: string,  characters: Character[]) {
+       this.title= title;
+       this.description= description;
+       this.characters= characters;
+    }
+    
+     toString() : string{
+         var characterStr="";
+         this.characters.forEach((cha) =>{ characterStr+= cha.toString() + "<br/>";});
+         
+         return "<b>"+this.title +" "+this.description+"</b><br/>" +characterStr;
     }
 }
 
-interface Person {
-    firstname: string;
-    lastname: string;
+class  Character{
+    
+    name: string;
+    surname: string;
+    
+    constructor(name: string, surname: string){
+        this.name=name;
+        this.surname=surname;
+        
+    }
+    
+    toString() : string{
+        return this.name +" "+ this.surname;
+    }
 }
 
-function greeter(person : Person) {
-    return "Hello, " + person.firstname + " " + person.lastname;
-}
+var listCharacter:Array<Character> = [
+    new Character("John","Dorian"),
+    new Character("Elliot","Reid"),
+    new Character("Carla","Espinosa")
+];
 
-var user : Student= new Student("Samuele","", "Resca");
-document.body.innerHTML = greeter(user);
+var telefilm= new Telefilm("Scrubs","Medical situations", listCharacter);
+
+
+
+
+document.body.innerHTML = telefilm.toString();
